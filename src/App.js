@@ -34,11 +34,11 @@ function App() {
   };
 
   return (
-    <div>
+    <div style={{ background: 'linear-gradient(to right, #f8eec7, #e0c3fc)', minHeight: '100vh' }}>
       {/* Navbar */}
-      <AppBar position="static" color="primary">
+      <AppBar position="static" style={{ backgroundColor: '#3f2a2a' }}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{ fontFamily: 'Georgia, serif', color: '#fff' }}>
             KBR Retail
           </Typography>
           <Button color="inherit">Home</Button>
@@ -48,37 +48,38 @@ function App() {
       </AppBar>
 
       {/* Hero Section */}
-      <Box sx={{ padding: 4, textAlign: 'center', backgroundColor: '#f4f4f9', marginBottom: 4 }}>
-        <Typography variant="h2" color="primary" gutterBottom>
+      <Box sx={{ padding: 4, textAlign: 'center', backgroundColor: '#f5f5dc', marginBottom: 4, boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)' }}>
+        <Typography variant="h2" color="primary" gutterBottom style={{ fontFamily: 'Georgia, serif', color: '#3f2a2a' }}>
           Welcome to KBR Retail
         </Typography>
-        <Typography variant="h5" color="textSecondary" paragraph>
+        <Typography variant="h5" color="textSecondary" paragraph style={{ fontFamily: 'Georgia, serif' }}>
           Explore a wide range of Hinduism-related products.
         </Typography>
-
       </Box>
 
       {/* Products Carousel */}
       <Container>
-        <Typography variant="h4" color="primary" gutterBottom align="center">
+        <Typography variant="h4" color="primary" gutterBottom align="center" style={{ fontFamily: 'Georgia, serif', color: '#3f2a2a' }}>
           Our Products
         </Typography>
         <Slider {...settings}>
           {products.map((product) => (
             <div key={product.id}>
-              <Box sx={{ textAlign: 'center' }}>
+              <Box sx={{ textAlign: 'center', padding: '20px' }}>
                 <img
                   src={product.img}
                   alt={product.name}
                   style={{
                     width: '100%',
-                    height: '350px',
+                    height: '400px',
                     objectFit: 'contain', // Ensures the image is fully visible without distortion
                     cursor: 'pointer',
+                    borderRadius: '10px',
+                    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
                   }}
                   onClick={() => handleOpen(product.img)}
                 />
-                <Typography variant="h5" sx={{ mt: 2 }}>
+                <Typography variant="h5" sx={{ mt: 2, fontFamily: 'Georgia, serif' }}>
                   {product.name}
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
@@ -92,28 +93,29 @@ function App() {
 
       {/* Google Search Button */}
       <Box sx={{ marginTop: 4, textAlign: 'center' }}>
-        <Typography variant="h4" color="primary" gutterBottom>
+        <Typography variant="h4" color="primary" gutterBottom style={{ fontFamily: 'Georgia, serif', color: '#3f2a2a' }}>
           Check KBR Trading on Google
         </Typography>
         <Button 
           variant="contained" 
           color="primary" 
-          href="https://www.google.com/search?q=kbr+trading&sca_esv=7ffb7a96b4e8ce9c&sca_upv=1&sxsrf=ADLYWIIlqjedRK0O_rOdyrIaCD-FAZdC8w%3A1726825723385&ei=-0TtZvueF_vy4-EP3dXSmQY&oq=kbr+trad&gs_lp=Egxnd3Mtd2l6LXNlcnAiCGticiB0cmFkKgIIADIKECMYgAQYJxiKBTILEC4YgAQYxwEYrwEyBRAAGIAEMgUQABiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSPYVUABY3QxwAHgAkAEAmAGZAaABgQiqAQMwLji4AQPIAQD4AQGYAgigAqQIwgIEECMYJ8ICCxAAGIAEGJECGIoFwgIIEC4YgAQYsQPCAgsQABiABBixAxiDAcICEBAuGIAEGNEDGEMYxwEYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDBAAGIAEGEMYigUYCsICFhAuGIAEGLEDGNEDGIMBGBQYxwEYhwLCAgoQABiABBhDGIoFwgIEEAAYA8ICChAAGIAEGBQYhwLCAggQABiABBixA8ICFhAuGIAEGLEDGNEDGIMBGBQYhwIYxwGYAwCSBwMwLjigB_FO&sclient=gws-wiz-serp#lpc=lpc&scso=_F0ftZtz5Np7l4-EPk8eZ2Ao_42:358" 
+          href="https://www.google.com/search?q=kbr+trading&sca_esv=7ffb7a96b4e8ce9c&sca_upv=1&sxsrf=ADLYWIIlqjedRK0O_rOdyrIaCD-FAZdC8w%3A1726825723385&ei=-0TtZvueF_vy4-EP3dXSmQY&oq=kbr+trad&gs_lp=Egxnd3Mtd2l6LXNlcnAiCGticiB0cmFkKgIIADIKECMYgAQYJxiKBTILEC4YgAQYxwEYrwEyBRAAGIAEMgUQABiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSPYVUABY3QxwAHgAkAEAmAGZAaABgQiqAQMwLji4AQPIAQD4AQGYAgigAqQIwgIEECMYJ8ICCxAAGIAEGJECGIoFwgIIEC4YgAQYsQPCAgsQABiABBixAxiDAcICEBAuGIAEGNEDGEMYxwEYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDBAAGIAEGEMYigUYCsICFhAuGIAEGLEDGNEDGIMBGBQYxwEYhwLCAgoQABiABBhDGIoFwgIEEAAYA8ICChAAGIAEGBQYhwLCAggQABiABBixA8ICFhAuGIAEGLEDGNEDGIMBGBQYhwIYxwGYAwCSBwMwLjigB_FO&sclient=gws-wiz-serp#lpc=lpc&scso=_F0ftZtz5Np7l4-EP3dXAo_42:358" 
           target="_blank"
+          style={{ backgroundColor: '#8b0000', color: 'white', borderRadius: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)' }}
         >
           View KBR Trading on Google
         </Button>
       </Box>
 
       {/* Contact Information Section */}
-      <Box sx={{ padding: 4, backgroundColor: '#f4f4f9', textAlign: 'center', marginTop: 4 }}>
-        <Typography variant="h4" color="primary" gutterBottom>
+      <Box sx={{ padding: 4, backgroundColor: '#f8f0e3', textAlign: 'center', marginTop: 4 }}>
+        <Typography variant="h4" color="primary" gutterBottom style={{ fontFamily: 'Georgia, serif', color: '#3f2a2a' }}>
           Contact Us
         </Typography>
-        <Typography variant="body1" color="textSecondary">
+        <Typography variant="body1" color="textSecondary" style={{ fontFamily: 'Roboto, sans-serif' }}>
           No.6F MEETU, Mettu St, Kundrathur, Chennai, Sikkarayapuram, Tamil Nadu 600069
         </Typography>
-        <Typography variant="body1" color="textSecondary">
+        <Typography variant="body1" color="textSecondary" style={{ fontFamily: 'Roboto, sans-serif' }}>
           Phone: +91 98408 08388
         </Typography>
       </Box>
@@ -142,7 +144,7 @@ function App() {
       </Modal>
 
       {/* Footer */}
-      <Box sx={{ padding: 2, textAlign: 'center', backgroundColor: '#1976d2', color: 'white', marginTop: 4 }}>
+      <Box sx={{ padding: 2, textAlign: 'center', backgroundColor: '#8b0000', color: 'white', marginTop: 4 }}>
         <Typography variant="body1">© 2024 KBR Retail | All Rights Reserved</Typography>
       </Box>
     </div>
