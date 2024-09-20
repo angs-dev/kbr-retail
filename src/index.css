@@ -6,6 +6,10 @@ body {
   padding: 0;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+  
   /* Header Styling */
   .navbar {
     background-color: white;
@@ -169,7 +173,7 @@ body {
     gap: 0.5rem;
   }
 
-    .main-navbar {
-      padding: 1rem;
-    }
-    }
+                                .main-navbar {
+                                  padding: 1rem;
+                                }
+                                }
