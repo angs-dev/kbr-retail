@@ -1,14 +1,9 @@
 import React from 'react';
+import MainNav from './MainNav';
 
 const Header = () => (
     <header>
-        <h1>KBR Retail</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#products">Products</a></li>
-            </ul>
-        </nav>
+        <MainNav />
     </header>
 );
 
